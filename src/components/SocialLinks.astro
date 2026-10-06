@@ -1,0 +1,48 @@
+---
+import { site } from '../data/site';
+
+interface Props {
+  class?: string;
+  size?: number;
+}
+
+const { class: className = '', size = 18 } = Astro.props;
+
+const links = [
+  {
+    href: site.social.facebook,
+    label: 'Facebook',
+    path: 'M14 8.5V6.6c0-.9.6-1.1 1-1.1h2.6V1.6L14 1.6c-4 0-4.9 3-4.9 4.9v2H6.8v4h2.3V22.4H14V12.5h3.3l.4-4H14Z',
+  },
+  {
+    href: site.social.instagram,
+    label: 'Instagram',
+    path: 'M12 2.2c3.2 0 3.6 0 4.8.1 3.3.2 4.8 1.7 5 5 .1 1.3.1 1.6.1 4.8s0 3.6-.1 4.8c-.2 3.2-1.7 4.8-5 5-1.3.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-3.3-.2-4.8-1.7-5-5-.1-1.3-.1-1.6-.1-4.8s0-3.6.1-4.8c.2-3.3 1.7-4.8 5-5 1.3-.1 1.6-.1 4.8-.1ZM12 0C8.7 0 8.3 0 7.1.1 2.7.3.3 2.7.1 7.1 0 8.3 0 8.7 0 12s0 3.7.1 4.9c.2 4.4 2.6 6.8 7 7 1.2.1 1.6.1 4.9.1s3.7 0 4.9-.1c4.4-.2 6.8-2.6 7-7 .1-1.2.1-1.6.1-4.9s0-3.7-.1-4.9c-.2-4.4-2.6-6.8-7-7C15.7 0 15.3 0 12 0Zm0 5.8a6.2 6.2 0 1 0 0 12.4 6.2 6.2 0 0 0 0-12.4ZM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8Zm6.4-11.8a1.4 1.4 0 1 0 0 2.9 1.4 1.4 0 0 0 0-2.9Z',
+  },
+  {
+    href: site.social.linkedin,
+    label: 'LinkedIn',
+    path: 'M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9.75h4v12H3v-12Zm6.5 0h3.8v1.65h.06c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.77 2.65 4.77 6.1v6.3h-4v-5.6c0-1.33-.02-3.05-1.86-3.05-1.86 0-2.14 1.45-2.14 2.95v5.7h-4v-12Z',
+  },
+].filter((l) => l.href);
+---
+
+<ul class:list={['flex items-center gap-2.5', className]}>
+  {
+    links.map((l) => (
+      <li>
+        <a
+          href={l.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={`${site.name} pe ${l.label}`}
+          class="flex h-10 w-10 items-center justify-center rounded-full border border-current/25 transition-colors duration-500 hover:border-brass-400 hover:bg-brass-400 hover:text-forest-900"
+        >
+          <svg width={size * 0.8} height={size * 0.8} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d={l.path} />
+          </svg>
+        </a>
+      </li>
+    ))
+  }
+</ul>

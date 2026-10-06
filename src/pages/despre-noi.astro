@@ -1,0 +1,97 @@
+---
+import { Image } from 'astro:assets';
+import { ArrowRight } from '@lucide/astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import Marquee from '../components/Marquee.astro';
+import CTASection from '../components/CTASection.astro';
+import { photo } from '../lib/photos';
+import { url } from '../lib/url';
+import { despre as d, em } from '../lib/continut';
+
+const p = d.pagina;
+---
+
+<BaseLayout title={p.titluSeo} description={p.descriereSeo} image={photo(p.poza)}>
+  <PageHero
+    eyebrow={p.eticheta}
+    crumb="Despre noi"
+    title={em(p.titlu, 'text-brass-300')}
+    subtitle={p.subtitlu}
+    image={photo(p.poza)}
+    alt="Tablou pe peretele unei camere din Pensiunea Pictorilor"
+  />
+
+  <!-- INTRO -->
+  <section class="bg-cream-100 py-24 md:py-36">
+    <div class="container-x grid items-center gap-16 lg:grid-cols-12">
+      <div class="lg:col-span-6">
+        <SectionHeading eyebrow="Numele nostru" title={em(d.intro.titlu)} size="md" />
+        <div class="mt-10 space-y-6">
+          {d.intro.paragrafe.map((t, i) => <p class:list={[i === 0 ? 'lead !text-forest-900' : 'text-muted']} data-reveal>{t}</p>)}
+        </div>
+      </div>
+      <div class="lg:col-span-5 lg:col-start-8">
+        <div class="aspect-[4/5] overflow-hidden rounded-[1.75rem]" data-reveal-img>
+          <Image src={photo(d.intro.poza)} alt="Plăcuța unei camere dedicate pictorului János Thorma" widths={[480, 800, 1100]} sizes="(min-width: 1024px) 40vw, 100vw" class="img-cover" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ISTORIE -->
+  <section class="grain relative bg-forest-900 py-24 text-cream-50 md:py-36">
+    <div class="container-x grid gap-16 lg:grid-cols-12">
+      <div class="lg:col-span-4">
+        <div class="lg:sticky lg:top-32">
+          <SectionHeading eyebrow={d.istorie.eticheta} title={em(d.istorie.titlu, 'text-brass-300')} light size="md" />
+          <div class="mt-12 hidden aspect-[4/5] overflow-hidden rounded-[1.5rem] lg:block" data-reveal-img>
+            <Image src={photo(d.istorie.poza)} alt="Colonia Pictorilor din Baia Mare" widths={[400, 700]} sizes="30vw" class="img-cover" />
+          </div>
+        </div>
+      </div>
+      <ol class="relative lg:col-span-7 lg:col-start-6">
+        <span class="absolute bottom-2 left-[0.45rem] top-2 w-px bg-cream-100/15" aria-hidden="true"></span>
+        {
+          d.istorie.momente.map((t) => (
+            <li class="relative pb-14 pl-12 last:pb-0" data-reveal>
+              <span class="absolute left-0 top-2 h-[0.95rem] w-[0.95rem] rounded-full border-2 border-brass-400 bg-forest-900" />
+              <p class="font-serif text-lg italic text-brass-300">{t.an}</p>
+              <h3 class="mt-2 font-serif text-3xl">{t.titlu}</h3>
+              <p class="mt-4 max-w-xl text-cream-100/70">{t.text}</p>
+            </li>
+          ))
+        }
+      </ol>
+    </div>
+  </section>
+
+  <Marquee words={['Hollósy Simon', 'Thorma János', 'Veső Ágoston', 'Eugen Pascu', 'Marisa Falbo']} class="bg-cream-100 text-forest-800" />
+
+  <!-- FAMILIE -->
+  <section class="bg-cream-100 pb-28 md:pb-40">
+    <div class="container-x grid items-center gap-16 lg:grid-cols-12">
+      <div class="grid grid-cols-2 gap-4 md:gap-6 lg:col-span-6">
+        <div class="aspect-[3/4] overflow-hidden rounded-[1.5rem]" data-reveal-img>
+          <Image src={photo(d.familie.poza1)} alt="Ușa camerei Hollósy Simon" widths={[400, 700]} sizes="(min-width: 1024px) 25vw, 50vw" class="img-cover" />
+        </div>
+        <div class="mt-16 aspect-[3/4] overflow-hidden rounded-[1.5rem] md:mt-28" data-reveal-img data-delay="0.15">
+          <Image src={photo(d.familie.poza2)} alt="Ușa camerei Veső Ágoston" widths={[400, 700]} sizes="(min-width: 1024px) 25vw, 50vw" class="img-cover" />
+        </div>
+      </div>
+      <div class="lg:col-span-5 lg:col-start-8">
+        <SectionHeading eyebrow={d.familie.eticheta} title={em(d.familie.titlu)} size="md" />
+        <div class="mt-10 space-y-5 text-muted">
+          {d.familie.paragrafe.map((t) => <p data-reveal>{t}</p>)}
+        </div>
+        <blockquote class="mt-10 border-l-2 border-brass-400 pl-6 font-serif text-[clamp(1.4rem,2.2vw,1.9rem)] leading-snug text-forest-900" data-reveal>
+          „{d.familie.citat}”
+        </blockquote>
+        <a href={url('/camere')} class="btn btn-dark mt-12" data-reveal>Vezi camerele <ArrowRight size={16} /></a>
+      </div>
+    </div>
+  </section>
+
+  <CTASection />
+</BaseLayout>

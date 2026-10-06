@@ -1,0 +1,67 @@
+{
+  "nume": "Pensiunea Pictorilor",
+  "numeScurt": "Pensiunea Pictorilor",
+  "subtitluLogo": "Baia Mare · Centrul Vechi",
+  "descriere": "Cazare în centrul vechi din Baia Mare, la Pensiunea Pictorilor: camere cu mic dejun inclus, parcare gratuită, WiFi și aer condiționat, vizavi de Colonia Pictorilor.",
+  "telefon": "0756 420 992",
+  "whatsapp": "0756 420 992",
+  "email": "",
+  "adresa": {
+    "strada": "Strada Pictorilor nr. 1",
+    "oras": "Baia Mare",
+    "judet": "Maramureș",
+    "tara": "România"
+  },
+  "cautareHarta": "Pensiunea Pictorilor, Strada Pictorilor 1, Baia Mare",
+  "linkHarta": "https://goo.gl/maps/QVTskAwUpUiCTRJG9",
+  "checkIn": "după 14:00",
+  "checkOut": "până la 11:00",
+  "anDeschidere": 2009,
+  "retele": {
+    "facebook": "https://www.facebook.com/pensiuneapictorilor",
+    "instagram": "https://www.instagram.com/pensiuneapictorilor/",
+    "linkedin": "https://www.linkedin.com/in/pensiunea-pictorilor-32603327/"
+  },
+  "firma": {
+    "denumire": "AFACERILE PICTORILOR SRL",
+    "cui": "38107536",
+    "registruComert": "J24/1503/2017",
+    "certificatClasificare": "31379 din 09.03.2023",
+    "sediu": "Str. Pictorilor 1, Baia Mare"
+  },
+  "meniu": [
+    { "link": "/camere", "eticheta": "Camere" },
+    { "link": "/despre-noi", "eticheta": "Despre noi" },
+    { "link": "/locatii", "eticheta": "Obiective" },
+    { "link": "/galerie", "eticheta": "Galerie" },
+    { "link": "/recenzii", "eticheta": "Recenzii" },
+    { "link": "/contact", "eticheta": "Contact" }
+  ],
+  "subsol": {
+    "text": "Pensiune în centrul vechi din Baia Mare, pe strada artiștilor, vizavi de Colonia Pictorilor. Din 2009, un loc prietenos, curat, învăluit în liniște și pace.",
+    "plata": "Acceptăm card (Maestro, Visa, American Express) și carduri de vacanță EdenRed, UpRomânia și Sodexo."
+  },
+  "benzaPlata": {
+    "afiseaza": true,
+    "titlu": "Acceptăm card de vacanță",
+    "subtitlu": "EdenRed, UpRomânia și Sodexo.",
+    "text": "Plătiți cu cardul (Maestro, Visa, American Express) sau cu cardul de vacanță. Pensiunea fiscalizează toate camerele vândute: primiți bon fiscal sau factură."
+  },
+  "chemareFinala": {
+    "eticheta": "Nu te-ai hotărât încă?",
+    "titlu": "Vino să vezi *cum arată pensiunea*",
+    "text": "Te așteptăm în centrul vechi din Baia Mare, la un minut de Colonia Pictorilor. Sună-ne sau scrie-ne pe WhatsApp și îți spunem ce camere sunt libere.",
+    "buton": "Rezervă",
+    "poza": "camere/camera-de-lux-veso-agoston/18"
+  },
+  "pagina404": {
+    "titlu": "Pagina *nu există*",
+    "text": "Pagina pe care o cauți nu există sau a fost mutată. Te ducem înapoi la pensiune.",
+    "poza": "camere/camera-matrimoniala/09"
+  },
+  "seo": {
+    "adresaSite": "https://pensiuneapictorilor.ro",
+    "pozaDistribuire": "camere/camera-de-lux-hollosy-simon/01",
+    "codVerificareGoogle": ""
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "pagina": {
+    "titluSeo": "Despre noi – povestea pensiunii",
+    "descriereSeo": "Povestea Pensiunii Pictorilor din Baia Mare: de la Hollósy Simon și Colonia Pictorilor din 1896, la pensiunea de familie deschisă în 2009 pe strada artiștilor.",
+    "eticheta": "Despre noi",
+    "titlu": "Povestea *Pensiunii Pictorilor*",
+    "subtitlu": "Un nume legat de istoria orașului Baia Mare și un proiect care a început ca un vis al întregii noastre familii.",
+    "poza": "camere/camera-matrimoniala/06"
+  },
+  "intro": {
+    "titlu": "Orașul nostru ascunde *o comoară*",
+    "paragrafe": [
+      "Numele de Pensiunea Pictorilor are o strânsă legătură cu istoria orașului Baia Mare. Cu toate că orașul nostru este renumit pentru minerit, de unde vine și numele (baia = mină), și pentru castane, de unde vine și numele Zilelor Orașului (Sărbătoarea Castanelor), orașul nostru ascunde o altă comoară: Colonia Pictorilor.",
+      "Aici s-au pus bazele școlii băimărene de pictură, care a influențat puternic pictura maghiară."
+    ],
+    "poza": "camere/camera-matrimoniala/16"
+  },
+  "istorie": {
+    "eticheta": "Istorie",
+    "titlu": "De la Colonie, *la pensiune*",
+    "poza": "obiective/colonia-pictorilor/01",
+    "momente": [
+      {
+        "an": "1896",
+        "titlu": "Hollósy Simon ajunge la Baia Mare",
+        "text": "Hollósy Simon, alături de școala sa de pictură, vine la Baia Mare și, impresionat de oraș, decide să se stabilească aici pentru următorii ani. Succesul datorat lui Simon creează contextul formării unei Școli Băimărene de Pictură."
+      },
+      {
+        "an": "1898",
+        "titlu": "Începe construcția Coloniei",
+        "text": "Dacă la început artiștii s-au întâlnit în câteva barăci din Parcul Municipal „Regina Maria”, timpul și recunoașterea europeană îi fac să solicite o nouă locație pentru 8 ateliere. Construcția Coloniei, în locul în care este astăzi, vizavi de Pensiunea Pictorilor, începe după hotărârea Consiliului Local din 1898, însă moartea primarului Oliver Thurman îngreunează procesul."
+      },
+      {
+        "an": "1901 – 1902",
+        "titlu": "Se naște Școala de Pictură Băimăreană",
+        "text": "În 1901, Hollósy Simon părăsește orașul. Un an mai târziu aici se pun bazele Școlii de Pictură Băimărene. Artiștii rămași, dar și studenții veniți, vor avea un rol important în introducerea Impresionismului și Post-Impresionismului în pictura maghiară. În acea perioadă, Baia Mare era parte a Imperiului Austro-Ungar."
+      },
+      {
+        "an": "Strada Pictorilor",
+        "titlu": "Strada în care locuiau artiștii",
+        "text": "Strada Pictorilor, care se află exact lângă, a devenit locul în care artiștii sau studenții căutau chirie pe perioada șederii lor. Unii vecini mai în vârstă ne-au spus că numărul mare de artiști, în marea lor majoritate pictori, are strânsă legătură cu denumirea de azi a străzii."
+      },
+      {
+        "an": "2009",
+        "titlu": "Deschidem Pensiunea Pictorilor",
+        "text": "Proiectul „Pensiunea Pictorilor” a început ca un vis și a devenit încet-încet realitate prin implicarea întregii noastre familii. Toți am muncit împreună, cot la cot, cu dedicare și dragoste, pentru ca în anul 2009 să putem deschide oficial cea mai nouă pensiune, la acea vreme, din oraș."
+      }
+    ]
+  },
+  "familie": {
+    "eticheta": "Familia noastră",
+    "titlu": "Fiecare oaspete, *invitat în familie*",
+    "paragrafe": [
+      "În aceste condiții, numele pensiunii a venit firesc în contextul istoric bogat al locului.",
+      "Din momentul deschiderii, fiecare client a fost invitat să intre în familia noastră, care cu timpul s-a lărgit considerabil. Unii, pentru că se simțeau legați, au lăsat diferite lucruri aici, sub formă de cadouri, pentru a simți de fiecare dată când se întorc acel sentiment de „acasă”."
+    ],
+    "citat": "Prioritatea noastră a fost crearea și menținerea unui loc prietenos, curat, învăluit în liniște și pace.",
+    "poza1": "camere/camera-de-lux-hollosy-simon/04",
+    "poza2": "camere/camera-de-lux-veso-agoston/12"
+  }
+}

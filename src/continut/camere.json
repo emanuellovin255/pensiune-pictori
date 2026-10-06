@@ -1,0 +1,232 @@
+{
+  "pagina": {
+    "titluSeo": "Camere și tarife",
+    "descriereSeo": "Nouă camere la Pensiunea Pictorilor din Baia Mare, de la single la apartament pentru familie. Mic dejun inclus, parcare gratuită, WiFi și aer condiționat. De la 200 lei / noapte.",
+    "eticheta": "Camere & tarife",
+    "titlu": "Camere care poartă *nume de pictori*",
+    "subtitlu": "Nouă camere, de la single până la apartamentul pentru familie. Toate au baie proprie, TV, frigider și WiFi gratuit, iar micul dejun este inclus în preț.",
+    "poza": "camere/camera-de-lux-hollosy-simon/01",
+    "titluTarife": "Prețuri *pe noapte*",
+    "notaTarife": "Tarifele sunt pe cameră, pentru o noapte, cu micul dejun inclus. Plata se face la check-in, cu numerar, card sau card de vacanță.",
+    "notaCamera": "Pe cameră, cu mic dejun inclus.",
+    "pozaFinal": "camere/apartament-eugen-pascu/01"
+  },
+  "conditii": [
+    "Anulare GRATUITĂ cu maxim 48 de ore înainte",
+    "Nu este nevoie să plătiți astăzi. Veți plăti în timpul sejurului.",
+    "Camera întreagă doar pentru dumneavoastră!",
+    "Micul dejun este inclus în prețul cazării"
+  ],
+  "informatii": [
+    "Check-in după ora 14:00",
+    "Check-out până la ora 11:00",
+    "Recepție deschisă non-stop",
+    "Parcare în fața pensiunii",
+    "Spațiu igienizat și dezinfectat",
+    "Acceptă animale de companie",
+    "Fumatul interzis în cameră"
+  ],
+  "camere": [
+    {
+      "slug": "camera-single",
+      "nume": "Cameră single",
+      "numeScurt": "Single",
+      "pret": 200,
+      "persoane": 1,
+      "paturi": 1,
+      "scor": 4.4,
+      "recenzii": 10,
+      "evidentiere": "Ideal pentru o persoană",
+      "intro": "Tot ce îi trebuie unei persoane ca să se relaxeze sau să-și termine munca.",
+      "descriere": [
+        "Camera single este destinată unei singure persoane. Este echipată cu tot ce are nevoie o persoană atât pentru a se relaxa, cât și pentru a-și termina munca: TV, frigider, WIFI și birou."
+      ],
+      "dotari": ["Wifi gratuit", "Baie cu duș în cameră", "Televizor cu cablu", "Măsuță de birou", "Frigider în cameră", "Încălzire (iarna)", "Prosoape curate", "Lenjerie curată", "Uscător de păr", "Fierbător", "Saltea pe spumă", "Pahare și cană"],
+      "folderPoze": "camere/camera-single"
+    },
+    {
+      "slug": "camera-single-superioara-baia-mare",
+      "nume": "Cameră single superioară",
+      "numeScurt": "Single superioară",
+      "pret": 220,
+      "persoane": 1,
+      "paturi": 1,
+      "scor": 4.8,
+      "recenzii": 2,
+      "evidentiere": "Ideal pentru călătorii de afaceri",
+      "intro": "La mansardă, cu vedere spre Strada Victoriei, gândită pentru cei aflați în tranzit.",
+      "descriere": [
+        "Camera Single Superioară, situată la mansardă, oferă o atmosferă primitoare și confortabilă, ideală pentru persoanele aflate în tranzit. Beneficiază de o vedere încântătoare spre Strada Victoriei și este amenajată cu mobilier modern și o saltea din spumă de înaltă calitate pentru un somn odihnitor.",
+        "Datorită sistemului de climatizare, camera asigură o temperatură optimă pe tot parcursul anului, fiind răcoroasă vara și plăcută iarna. Este echipată cu toate facilitățile necesare pentru a garanta o experiență plăcută și relaxantă."
+      ],
+      "dotari": ["Wifi gratuit", "Baie cu duș în cameră", "Televizor cu cablu", "Măsuță de birou", "Frigider în cameră", "Încălzire (iarna)", "Prosoape curate", "Lenjerie curată", "Uscător de păr", "Fierbător", "Aer condiționat", "Saltea pe spumă", "Pahare și cană"],
+      "folderPoze": "camere/camera-single-superioara"
+    },
+    {
+      "slug": "camera-matrimoniala",
+      "nume": "Cameră matrimonială",
+      "numeScurt": "Matrimonială",
+      "pret": 240,
+      "persoane": 2,
+      "paturi": 1,
+      "scor": 4.3,
+      "recenzii": 10,
+      "evidentiere": "Ideal pentru cuplu",
+      "intro": "O cameră elegantă pentru cupluri, dedicată pictorului János Thorma.",
+      "descriere": [
+        "## Cameră matrimonială perfectă pentru relaxare",
+        "Cauți cazare în Baia Mare într-un loc confortabil, elegant și aproape de principalele atracții? Pensiunea Pictorilor îți pune la dispoziție o cameră matrimonială ideală pentru cupluri care doresc o experiență deosebită.",
+        "## Confort și dotări premium",
+        "✔ Pat matrimonial cu saltea din spumă cu memorie pentru un somn odihnitor",
+        "✔ WiFi de mare viteză – rămâi conectat în orice moment",
+        "✔ Birou spațios, ideal pentru lucru sau planificarea excursiilor",
+        "✔ Frigider pentru păstrarea băuturilor și alimentelor proaspete",
+        "✔ Televizor cu ecran plat și canale prin cablu",
+        "✔ Baie privată modernă, echipată cu produse de igienă premium",
+        "## Locație ideală în Baia Mare",
+        "Pensiunea Pictorilor se află într-o zonă liniștită, aproape de Centrul Vechi, restaurante, cafenele și principalele obiective turistice din Baia Mare. Fie că ești în călătorie de afaceri sau într-un sejur romantic, îți garantăm o experiență relaxantă și confortabilă."
+      ],
+      "dotari": ["Wifi gratuit", "Baie cu duș în cameră", "Televizor cu cablu", "Măsuță de birou", "Frigider în cameră", "Încălzire (iarna)", "Prosoape curate", "Lenjerie curată", "Uscător de păr", "Fierbător", "Aer condiționat", "Saltea pe spumă", "Pahare și cană"],
+      "folderPoze": "camere/camera-matrimoniala"
+    },
+    {
+      "slug": "camera-twin-pictorilor",
+      "nume": "Cameră twin Pictorilor",
+      "numeScurt": "Twin Pictorilor",
+      "pret": 240,
+      "persoane": 2,
+      "paturi": 2,
+      "scor": 4.5,
+      "recenzii": 2,
+      "evidentiere": "Două paturi separate",
+      "intro": "La mansardă, cu vedere spre strada Pictorilor și două paturi separate.",
+      "descriere": [
+        "Camera Twin, care are vedere spre str. Pictorilor, este concepută pentru două persoane aflate în tranzit. Are două paturi separate cu saltea pe spumă. Este o cameră aflată la mansardă, fiind foarte călduroasă iarna. Dispune de toate facilitățile necesare unui turist."
+      ],
+      "dotari": ["Wifi gratuit", "Baie cu duș în cameră", "Televizor cu cablu", "Măsuță de birou", "Frigider în cameră", "Încălzire (iarna)", "Prosoape curate", "Lenjerie curată", "Uscător de păr", "Fierbător", "Aer condiționat", "Saltea pe spumă", "Pahare și cană"],
+      "folderPoze": "camere/camera-twin-pictorilor"
+    },
+    {
+      "slug": "camera-de-lux-hollosy-simon",
+      "nume": "Cameră de lux Hollósy Simon",
+      "numeScurt": "Lux Hollósy Simon",
+      "pret": 280,
+      "persoane": 2,
+      "paturi": 1,
+      "scor": 4.6,
+      "recenzii": 20,
+      "evidentiere": "Ideal pentru cuplu",
+      "intro": "Mai mult spațiu decât o cameră matrimonială, cu pat dublu și canapea extensibilă.",
+      "descriere": [
+        "Camera de Lux Hollósy Simon este alegerea ideală pentru cupluri și familii cu un copil, oferind mai mult spațiu decât o cameră matrimonială standard și asigurând un sejur relaxant și confortabil. Concepută pentru eleganță și funcționalitate, această unitate de cazare premium oferă toate facilitățile necesare pentru o experiență de neuitat.",
+        "## Dotări premium & confort exclusiv",
+        "✔ Spațiu generos – mai mult loc pentru o experiență relaxantă",
+        "✔ Pat matrimonial confortabil & canapea extensibilă – ideală pentru un cuplu sau o familie cu copil",
+        "✔ Frigider – păstrează gustările și băuturile proaspete",
+        "✔ Internet WiFi de mare viteză – rămâi conectat în orice moment",
+        "✔ Aer condiționat (AC) – temperatură optimă indiferent de sezon",
+        "✔ Televizor cu ecran plat cu canale prin cablu pentru divertisment",
+        "✔ Birou spațios – perfect pentru lucru sau planificarea călătoriilor",
+        "✔ Design elegant și atmosferă relaxantă – ideală pentru confort maxim",
+        "## O cazare de lux într-o locație ideală",
+        "Indiferent dacă ești în căutarea unei escapade romantice sau călătorești cu familia, Camera de Lux Hollósy Simon oferă echilibrul între spațiu, intimitate și dotări moderne, asigurând un sejur confortabil și liniștit.",
+        "Situată într-o zonă liniștită, dar aproape de principalele atracții, restaurante și zone comerciale, această cameră oferă relaxare și accesibilitate în același timp."
+      ],
+      "dotari": ["Wifi gratuit", "Baie cu duș în cameră", "Televizor cu cablu", "Măsuță de birou", "Frigider în cameră", "Încălzire (iarna)", "Prosoape curate", "Lenjerie curată", "Uscător de păr", "Fierbător", "Aer condiționat", "Saltea pe spumă", "Pahare și cană"],
+      "folderPoze": "camere/camera-de-lux-hollosy-simon"
+    },
+    {
+      "slug": "camera-de-lux-veso-agoston",
+      "nume": "Cameră de lux Veső Ágoston",
+      "numeScurt": "Lux Veső Ágoston",
+      "pret": 280,
+      "persoane": 2,
+      "paturi": 1,
+      "scor": 4.9,
+      "recenzii": 15,
+      "evidentiere": "Ideal pentru cupluri",
+      "intro": "Cea mai apreciată cameră a casei, cu canapea, birou și rafinament artistic.",
+      "descriere": [
+        "Camera de Lux Veso Agoston este alegerea ideală pentru un cuplu sau o familie cu un copil, oferind mai mult spațiu decât o cameră dublă standard din Baia Mare. Decorată elegant și dotată cu facilități moderne, camera dispune de frigider, canapea confortabilă, birou de lucru, internet Wi-Fi de mare viteză și aer condiționat.",
+        "Perfectă pentru cei care caută cazare de calitate într-o pensiune din Baia Mare, această cameră îmbină confortul cu rafinamentul artistic inspirat de celebrul pictor Veso Agoston."
+      ],
+      "dotari": ["Wifi gratuit", "Baie cu duș în cameră", "Televizor cu cablu", "Măsuță de birou", "Frigider în cameră", "Încălzire (iarna)", "Prosoape curate", "Lenjerie curată", "Uscător de păr", "Fierbător", "Aer condiționat", "Saltea pe spumă", "Pahare și cană"],
+      "folderPoze": "camere/camera-de-lux-veso-agoston"
+    },
+    {
+      "slug": "camera-tripla",
+      "nume": "Cameră triplă",
+      "numeScurt": "Triplă",
+      "pret": 280,
+      "persoane": 3,
+      "paturi": 3,
+      "scor": 4.0,
+      "recenzii": 3,
+      "evidentiere": "Trei paturi separate",
+      "intro": "Pentru trei persoane care vor să doarmă în paturi separate.",
+      "descriere": [
+        "Camera Triplă este constituită pentru trei persoane care doresc să doarmă în paturi separate. Camera dispune de birou, de frigider și de toate celelalte lucruri necesare unui somn odihnitor."
+      ],
+      "dotari": ["Wifi gratuit", "Baie cu duș în cameră", "Televizor cu cablu", "Măsuță de birou", "Frigider în cameră", "Încălzire (iarna)", "Prosoape curate", "Lenjerie curată", "Fierbător", "Saltea pe spumă", "Pahare și cană"],
+      "folderPoze": "camere/camera-tripla"
+    },
+    {
+      "slug": "tripla-de-lux-marisa-falbo",
+      "nume": "Cameră triplă de lux Marisa Falbo",
+      "numeScurt": "Triplă de lux Marisa Falbo",
+      "pret": 320,
+      "persoane": 3,
+      "paturi": 2,
+      "scor": 4.8,
+      "recenzii": 46,
+      "evidentiere": "Ideal pentru o familie cu copil",
+      "intro": "Cea mai iubită cameră de oaspeți: pat matrimonial, pat suplimentar și mult spațiu.",
+      "descriere": [
+        "Descoperă rafinamentul și confortul absolut în Camera Triplă de Lux Marisa Falbo, ideală atât pentru cupluri, cât și pentru familii cu un copil. Această cameră spațioasă oferă mai mult loc pentru relaxare decât o cameră matrimonială standard, fiind perfectă pentru un sejur relaxant și sofisticat.",
+        "## Dotări premium & confort exclusiv",
+        "✔ Spațiu generos – mai mult loc pentru o experiență confortabilă",
+        "✔ Pat matrimonial confortabil & pat suplimentar – ideală pentru familii",
+        "✔ Frigider – păstrează băuturile și gustările mereu proaspete",
+        "✔ Internet WiFi de mare viteză – rămâi conectat în orice moment",
+        "✔ Aer condiționat (AC) – temperatură optimă indiferent de sezon",
+        "✔ Televizor cu ecran plat și canale prin cablu pentru divertisment",
+        "✔ Design elegant și atmosferă relaxantă, ideală pentru un sejur de neuitat",
+        "## O experiență de cazare premium în Baia Mare",
+        "Fie că planifici o escapadă romantică sau o vacanță în familie, Camera Triplă de Lux Marisa Falbo este alegerea ideală pentru un sejur relaxant și rafinat, beneficiind de dotări premium și un spațiu generos.",
+        "Situată într-o locație liniștită, aproape de principalele atracții din Baia Mare, această cameră îți oferă confortul și eleganța de care ai nevoie pentru o experiență unică."
+      ],
+      "dotari": ["Wifi gratuit", "Baie cu duș în cameră", "Televizor cu cablu", "Măsuță de birou", "Frigider în cameră", "Încălzire (iarna)", "Prosoape curate", "Lenjerie curată", "Uscător de păr", "Fierbător", "Aer condiționat", "Saltea pe spumă", "Pahare și cană"],
+      "folderPoze": "camere/tripla-de-lux-marisa-falbo"
+    },
+    {
+      "slug": "camera-apartament-eugen-pascu",
+      "nume": "Cameră tip apartament Eugen Pascu",
+      "numeScurt": "Apartament Eugen Pascu",
+      "pret": 350,
+      "persoane": 3,
+      "paturi": 2,
+      "scor": 4.7,
+      "recenzii": 29,
+      "evidentiere": "Ideal pentru o familie cu copil",
+      "intro": "Dormitor și living separate, două băi și două televizoare, pentru familii.",
+      "descriere": [
+        "Camera tip apartament Eugen Pascu este special concepută pentru familiile care au nevoie de mai mult spațiu și confort. Această unitate de cazare elegantă și bine dotată este formată din două încăperi separate: un dormitor intim și un living generos cu o canapea extensibilă confortabilă, ideală pentru 1-2 copii.",
+        "## Dotări premium & confort maxim",
+        "✔ Spațiu generos – ideal pentru familiile care doresc confort suplimentar",
+        "✔ Dormitor + living separat – intimitate și comoditate pentru părinți și copii",
+        "✔ Canapea extensibilă în living – perfectă pentru 1-2 copii",
+        "✔ Două televizoare cu ecran plat – divertisment pentru întreaga familie",
+        "✔ Frigider – pentru păstrarea băuturilor și gustărilor proaspete",
+        "✔ Internet WiFi de mare viteză – rămâi conectat în orice moment",
+        "✔ Aer condiționat (AC) – temperatură optimă indiferent de anotimp",
+        "✔ Birou spațios – ideal pentru lucru la distanță sau organizarea călătoriei",
+        "✔ Două băi moderne – confort și comoditate sporită pentru întreaga familie",
+        "## O cazare relaxantă & liniștită într-o locație ideală",
+        "Fie că plănuiești o vacanță în familie sau un sejur prelungit, Camera tip apartament Eugen Pascu oferă spațiul, intimitatea și dotările moderne necesare pentru o experiență relaxantă și fără griji.",
+        "Situată într-o zonă liniștită, aproape de principalele atracții turistice, restaurante și centre comerciale, această unitate de cazare îți asigură un echilibru perfect între relaxare, confort și accesibilitate."
+      ],
+      "dotari": ["Wifi gratuit", "Baie cu duș în cameră", "Televizor cu cablu", "Măsuță de birou", "Frigider în cameră", "Încălzire (iarna)", "Prosoape curate", "Lenjerie curată", "Uscător de păr", "Fierbător", "Aer condiționat", "Saltea pe spumă", "Pahare și cană"],
+      "folderPoze": "camere/apartament-eugen-pascu"
+    }
+  ]
+}

@@ -1,0 +1,120 @@
+---
+import { Image } from 'astro:assets';
+import { ArrowRight, ArrowLeft, Footprints, Clock, Phone, Ticket, MapPin } from '@lucide/astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SightCard from '../../components/SightCard.astro';
+import RoomCard from '../../components/RoomCard.astro';
+import CTASection from '../../components/CTASection.astro';
+import { sights, type Sight } from '../../data/sights';
+import { rooms } from '../../data/rooms';
+import { site } from '../../data/site';
+import { photo } from '../../lib/photos';
+import { phoneIntl } from '../../lib/continut';
+import { url } from '../../lib/url';
+
+export function getStaticPaths() {
+  return sights.map((sight) => ({ params: { slug: sight.slug }, props: { sight } }));
+}
+
+interface Props {
+  sight: Sight;
+}
+
+const { sight } = Astro.props;
+const img = photo(sight.photo);
+const others = sights.filter((s) => s.slug !== sight.slug).slice(0, 3);
+const recommended = [...rooms].sort((a, b) => b.reviews - a.reviews).slice(0, 3);
+const mapsLink = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${sight.name}, ${sight.address}`)}`;
+---
+
+<BaseLayout
+  title={sight.name}
+  description={`${sight.name}, la ${sight.distance} de ${site.name} (${sight.walk}). Program, prețul biletelor, adresă și telefon.`}
+  image={img}
+>
+  <section class="relative flex min-h-[80svh] items-end overflow-hidden bg-forest-900 text-white">
+    <div class="absolute inset-x-0 -top-[10%] h-[120%]" data-parallax="8">
+      <Image src={img} alt={sight.name} widths={[768, 1280, 1920]} sizes="100vw" loading="eager" fetchpriority="high" class="img-cover" />
+    </div>
+    <div class="absolute inset-0 bg-gradient-to-t from-forest-950/90 via-forest-950/45 to-forest-950/40"></div>
+
+    <div class="container-x relative pb-14 pt-40 md:pb-20" data-hero-fade>
+      <nav class="mb-8 flex flex-wrap items-center gap-2 text-[0.7rem] font-semibold uppercase tracking-[0.2em] text-white/75" aria-label="Breadcrumb">
+        <a href={url('/')} class="hover:text-white">Acasă</a>
+        <span aria-hidden="true">/</span>
+        <a href={url('/locatii')} class="hover:text-white">Obiective</a>
+        <span aria-hidden="true">/</span>
+        <span class="text-white/90">{sight.name}</span>
+      </nav>
+      <p class="eyebrow eyebrow-light">La {sight.distance} de pensiune</p>
+      <h1 class="display-lg mt-6 max-w-5xl" data-split="hero">{sight.name}</h1>
+      <div class="mt-10 flex flex-wrap gap-x-10 gap-y-4 text-white/85" data-reveal>
+        <span class="flex items-center gap-2"><Footprints size={18} stroke-width={1.5} /> {sight.walk}</span>
+        <span class="flex items-center gap-2"><Ticket size={18} stroke-width={1.5} /> de la {sight.price} lei / persoană</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-cream-100 py-20 md:py-32">
+    <div class="container-x grid gap-16 lg:grid-cols-12">
+      <div class="space-y-6 lg:col-span-7">
+        {sight.description.map((t, i) => <p class:list={[i === 0 ? 'font-serif text-[clamp(1.35rem,2.2vw,1.9rem)] leading-snug text-forest-900' : 'lead']} data-reveal>{t}</p>)}
+      </div>
+
+      <aside class="lg:col-span-4 lg:col-start-9">
+        <dl class="sticky top-28 divide-y divide-cream-100/12 rounded-[1.75rem] bg-forest-900 p-8 text-cream-50 md:p-10" data-reveal>
+          <div class="pb-6">
+            <dt class="flex items-center gap-2 text-[0.65rem] font-bold uppercase tracking-[0.2em] text-cream-100/70"><Footprints size={14} /> Distanță de pensiune</dt>
+            <dd class="mt-2 font-serif text-3xl text-brass-300">{sight.distance}</dd>
+            <dd class="text-sm text-cream-100/70">{sight.walk}</dd>
+          </div>
+          <div class="py-6">
+            <dt class="flex items-center gap-2 text-[0.65rem] font-bold uppercase tracking-[0.2em] text-cream-100/70"><Clock size={14} /> Program</dt>
+            {sight.hours.map((h) => <dd class="mt-2">{h}</dd>)}
+          </div>
+          <div class="py-6">
+            <dt class="flex items-center gap-2 text-[0.65rem] font-bold uppercase tracking-[0.2em] text-cream-100/70"><Ticket size={14} /> Preț bilet</dt>
+            {sight.tickets.map((t) => <dd class="mt-2">{t}</dd>)}
+          </div>
+          <div class="py-6">
+            <dt class="flex items-center gap-2 text-[0.65rem] font-bold uppercase tracking-[0.2em] text-cream-100/70"><Phone size={14} /> Telefon</dt>
+            <dd class="mt-2"><a href={`tel:${phoneIntl(sight.phone)}`} class="link-underline">{sight.phone}</a></dd>
+          </div>
+          <div class="pt-6">
+            <dt class="flex items-center gap-2 text-[0.65rem] font-bold uppercase tracking-[0.2em] text-cream-100/70"><MapPin size={14} /> Adresă</dt>
+            <dd class="mt-2">{sight.address}</dd>
+            <dd class="mt-5">
+              <a href={mapsLink} target="_blank" rel="noopener noreferrer" class="arrow-link text-brass-300">Deschide în Google Maps <ArrowRight size={15} /></a>
+            </dd>
+          </div>
+        </dl>
+      </aside>
+    </div>
+  </section>
+
+  <section class="bg-forest-900 py-24 text-cream-50 md:py-32">
+    <div class="container-x">
+      <div class="mb-12 flex flex-col justify-between gap-6 md:flex-row md:items-end">
+        <h2 class="display-md" data-split>Camere recomandate <em class="italic-serif text-brass-300">pentru tine</em></h2>
+        <a href={url('/camere')} class="arrow-link text-brass-300" data-reveal>Toate camerele <ArrowRight size={16} /></a>
+      </div>
+      <div class="grid gap-6 md:grid-cols-3">
+        {recommended.map((r) => <RoomCard room={r} index={rooms.indexOf(r)} />)}
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-cream-100 py-24 md:py-32">
+    <div class="container-x">
+      <div class="mb-12 flex flex-col justify-between gap-6 md:flex-row md:items-end">
+        <h2 class="display-md" data-split>Alte <em class="italic-serif">obiective</em></h2>
+        <a href={url('/locatii')} class="arrow-link text-forest-800" data-reveal><ArrowLeft size={16} /> Toate obiectivele</a>
+      </div>
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {others.map((s) => <SightCard sight={s} />)}
+      </div>
+    </div>
+  </section>
+
+  <CTASection />
+</BaseLayout>

@@ -1,0 +1,25 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import ReviewScores from '../components/ReviewScores.astro';
+import VoucherBand from '../components/VoucherBand.astro';
+import CTASection from '../components/CTASection.astro';
+import { photo } from '../lib/photos';
+import { recenzii as r, em } from '../lib/continut';
+
+const p = r.pagina;
+---
+
+<BaseLayout title={p.titluSeo} description={p.descriereSeo} image={photo(p.poza)}>
+  <PageHero
+    eyebrow={p.eticheta}
+    crumb="Recenzii"
+    title={em(p.titlu, 'text-brass-300')}
+    subtitle={p.subtitlu}
+    image={photo(p.poza)}
+    alt="Camera triplă de lux Marisa Falbo"
+  />
+  <ReviewScores />
+  <VoucherBand />
+  <CTASection />
+</BaseLayout>

@@ -1,0 +1,46 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import { photo } from '../lib/photos';
+import { termeni as t, em } from '../lib/continut';
+
+const p = t.pagina;
+const sections = t.sectiuni.map((s, i) => ({ ...s, id: `sectiunea-${i + 1}` }));
+---
+
+<BaseLayout title={p.titluSeo} description={p.descriereSeo} image={photo(p.poza)}>
+  <PageHero eyebrow={p.eticheta} crumb="Termeni și condiții" title={em(p.titlu, 'text-brass-300')} image={photo(p.poza)} alt="" />
+
+  <section class="bg-cream-100 py-20 md:py-28">
+    <div class="container-x grid gap-16 lg:grid-cols-12">
+      <nav class="lg:col-span-4" aria-label="Cuprins">
+        <div class="lg:sticky lg:top-28">
+          <p class="eyebrow">Cuprins</p>
+          <ol class="mt-6 space-y-2 text-[0.95rem]">
+            {sections.map((s) => <li><a href={`#${s.id}`} class="link-underline text-forest-900/80 hover:text-forest-900">{s.titlu}</a></li>)}
+          </ol>
+        </div>
+      </nav>
+      <div class="space-y-16 lg:col-span-7 lg:col-start-6">
+        {
+          sections.map((s) => (
+            <article id={s.id} class="scroll-mt-28">
+              <h2 class="font-serif text-[clamp(1.6rem,2.6vw,2.3rem)] leading-tight">{s.titlu}</h2>
+              <div class="mt-6 space-y-4 text-[0.98rem] leading-relaxed text-forest-900/80">
+                {s.paragrafe.map((par) =>
+                  par.startsWith('## ') ? (
+                    <h3 class="pt-4 font-serif text-xl text-forest-900">{par.slice(3)}</h3>
+                  ) : par.startsWith('• ') ? (
+                    <p class="flex gap-3 pl-1"><span class="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-brass-500" />{par.slice(2)}</p>
+                  ) : (
+                    <p>{par}</p>
+                  ),
+                )}
+              </div>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+</BaseLayout>

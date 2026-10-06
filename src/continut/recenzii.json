@@ -1,0 +1,92 @@
+{
+  "afiseaza": true,
+  "sursa": "Recenzii Google",
+  "pagina": {
+    "titluSeo": "Recenzii ale oaspeților",
+    "descriereSeo": "Ce spun oaspeții despre Pensiunea Pictorilor din Baia Mare: curățenie, gazde primitoare, mic dejun bun și o locație centrală. Notele fiecărei camere și recenziile Google.",
+    "eticheta": "Recenzii",
+    "titlu": "Ce spun *clienții*",
+    "subtitlu": "care au trecut pe la noi. Notele camerelor și recenziile lăsate pe Google.",
+    "poza": "camere/tripla-de-lux-marisa-falbo/01"
+  },
+  "recenzii": [
+    {
+      "nume": "Ruben Daniel Budea",
+      "camera": "Suita Veső Ágoston",
+      "nota": 4.5,
+      "text": "Ottimo posto! Rapporto qualità prezzo ottimo. La camera che ho riservato era molto pulita e grande, compresa di tutto. Ho alloggiato nella suite Eugen Pascu, consiglio a tutti questa suite!"
+    },
+    {
+      "nume": "Irinel Traista",
+      "camera": "Suita Hollósy Simon",
+      "nota": 4.5,
+      "text": "Șederea la Pensiunea Pictorilor a fost excelentă, administratorii foarte amabili, am stat într-o cameră proaspăt renovată care arată destul de cochet. Aș putea spune că este una dintre cele mai bune cazări din Baia Mare."
+    },
+    {
+      "nume": "Gianina Lefterachi",
+      "camera": "Suita Eugen Pascu",
+      "nota": 4.5,
+      "text": "Totul la superlativ! Curățenie, central, ospitalitate și peste tot plutește căldură sufletească ❤️ Este o locație unde te simți ca acasă! Recomand, recomand, recomand!"
+    },
+    {
+      "nume": "Eve Alpin",
+      "camera": "Suita Marisa Falbo",
+      "nota": 4.5,
+      "text": "Pensiunea este foarte frumoasă, camerele sunt spațioase și curate, iar prețurile sunt foarte ok. Oamenii de la Pensiunea Pictorilor sunt foarte primitori și amabili. Cu următoarea ocazie o să ne cazăm cu siguranță tot aici. Recomand pentru cazare în Maramureș."
+    },
+    {
+      "nume": "Daniel V",
+      "camera": "Camera matrimonială",
+      "nota": 4.5,
+      "text": "Camere frumoase și oameni primitori. Pălinca foarte bună ;)"
+    },
+    {
+      "nume": "Cezara Mocanu",
+      "camera": "Camera single",
+      "nota": 4.5,
+      "text": "Mulțumită de toate! De o săptămână încoace am poposit prin diferite orașe. Dar cu cea mai bună impresie am plecat de la Pensiunea Pictorilor. Oameni ce își dau interesul pentru clienții lor! Cameră curată, mic dejun bun, parcare, tot ce îți trebuie."
+    },
+    {
+      "nume": "Dorin Luca",
+      "camera": "",
+      "nota": 5,
+      "text": "Camere curate. Am cerut o cameră cu aer condiționat și când am ajuns camera era la o temperatură optimă. Recomand."
+    },
+    {
+      "nume": "Annamaria Somay",
+      "camera": "",
+      "nota": 5,
+      "text": "Camere moderne, curățenie exemplară, ospitalitate tipică zonei minunate a Maramureșului. Recomand cu încredere!"
+    },
+    {
+      "nume": "Ludovic Bertok",
+      "camera": "",
+      "nota": 4.5,
+      "text": "Foarte bine totul... confortabil și foarte curat totul."
+    },
+    {
+      "nume": "Simona Moisa",
+      "camera": "",
+      "nota": 5,
+      "text": "Cameră curată, mic dejun tip bufet suedez, recomand! Chiar voi mai reveni."
+    },
+    {
+      "nume": "Daniela Tomoiaga",
+      "camera": "",
+      "nota": 5,
+      "text": "Curățenie, personal amabil, șefa o persoană deosebită și înțelegătoare, mic dejun bun și cafeaua delicioasă. Totul a fost perfect. Aș reveni oricând cu plăcere la această locație."
+    },
+    {
+      "nume": "Radulescu Dragos Emil",
+      "camera": "Camera single",
+      "nota": 5,
+      "text": "Gazda este foarte drăguță și prietenoasă. Prețurile camerelor sunt grozave pentru serviciile oferite."
+    },
+    {
+      "nume": "Oaspete",
+      "camera": "Camera de lux Veső Ágoston",
+      "nota": 5,
+      "text": "Foarte confortabil. Micul dejun super și la timp. Locația foarte aproape de centru."
+    }
+  ]
+}

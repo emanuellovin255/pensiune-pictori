@@ -1,0 +1,132 @@
+---
+import '../styles/global.css';
+import type { ImageMetadata } from 'astro';
+import { getImage } from 'astro:assets';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import MobileCTA from '../components/MobileCTA.astro';
+import { site } from '../data/site';
+import { general, em } from '../lib/continut';
+import { minPrice, rooms } from '../data/rooms';
+import { rating } from '../data/reviews';
+import { photo } from '../lib/photos';
+import { url } from '../lib/url';
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: ImageMetadata;
+  intro?: boolean;
+}
+
+const { title, description = site.description, image = photo(general.seo.pozaDistribuire), intro = false } = Astro.props;
+
+const longTitle = `${title} | ${site.shortName}, Baia Mare`;
+const fullTitle = title
+  ? longTitle.length <= 60
+    ? longTitle
+    : `${title} | ${site.shortName}`
+  : `${site.name} – Cazare în Baia Mare, în centrul vechi`;
+
+const og = await getImage({ src: image, width: 1200, height: 630, fit: 'cover', format: 'jpg' });
+const canonical = new URL(Astro.url.pathname, Astro.site);
+const ogImage = new URL(og.src, Astro.site);
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BedAndBreakfast',
+  name: site.name,
+  description: site.description,
+  url: new URL(url('/'), Astro.site).href,
+  image: ogImage.href,
+  telephone: site.phoneE164,
+  ...(minPrice > 0 && { priceRange: `de la ${minPrice} RON / noapte` }),
+  checkinTime: '14:00',
+  checkoutTime: '11:00',
+  petsAllowed: true,
+  currenciesAccepted: 'RON',
+  paymentAccepted: 'Numerar, card, card de vacanță',
+  foundingDate: String(general.anDeschidere),
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: site.address.street,
+    addressLocality: site.address.city,
+    addressRegion: site.address.county,
+    addressCountry: 'RO',
+  },
+  ...(rating.count > 0 && {
+    aggregateRating: { '@type': 'AggregateRating', ratingValue: rating.score, bestRating: 5, reviewCount: rating.count },
+  }),
+  amenityFeature: ['Mic dejun inclus', 'WiFi gratuit', 'Aer condiționat', 'Parcare gratuită', 'Recepție non-stop', 'Baie în cameră'].map((name) => ({
+    '@type': 'LocationFeatureSpecification',
+    name,
+    value: true,
+  })),
+  makesOffer: rooms.map((r) => ({
+    '@type': 'Offer',
+    name: r.name,
+    price: r.price,
+    priceCurrency: 'RON',
+    url: new URL(url(`/camere/${r.slug}`), Astro.site).href,
+  })),
+  sameAs: Object.values(site.social).filter(Boolean),
+  contactPoint: [
+    { '@type': 'ContactPoint', contactType: 'reservations', telephone: site.phoneE164, availableLanguage: ['ro'] },
+  ],
+};
+---
+
+<!doctype html>
+<html lang="ro" class="no-js">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" type="image/svg+xml" href={url('/favicon.svg')} />
+    <link rel="sitemap" href={url('/sitemap.xml')} />
+    <meta name="theme-color" content="#17221c" />
+    {general.seo.codVerificareGoogle && <meta name="google-site-verification" content={general.seo.codVerificareGoogle.replace(/^.*content="([^"]+)".*$/s, '$1').trim()} />}
+
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="ro_RO" />
+    <meta property="og:site_name" content={site.name} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <script is:inline src={url('/init.js')}></script>
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  </head>
+  <body>
+    <a href="#main" class="skip-link">Sari la conținut</a>
+
+    {
+      intro && (
+        <div class="intro-curtain fixed inset-0 z-[90] flex items-center justify-center bg-forest-900 text-cream-50" aria-hidden="true">
+          <div class="overflow-hidden">
+            <p class="intro-word font-serif text-5xl tracking-[-0.03em] md:text-7xl">
+              <Fragment set:html={em(general.numeScurt.replace(/^(\S+)\s+(.+)$/, '$1 *$2*'), 'text-brass-300')} />
+            </p>
+          </div>
+        </div>
+      )
+    }
+
+    <Header />
+    <main id="main" tabindex="-1">
+      <slot />
+    </main>
+    <Footer />
+    <MobileCTA />
+
+    <script>
+      import '../scripts/motion.ts';
+    </script>
+  </body>
+</html>

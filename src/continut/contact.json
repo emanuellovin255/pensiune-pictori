@@ -1,0 +1,50 @@
+{
+  "pagina": {
+    "titluSeo": "Contact și rezervări",
+    "descriereSeo": "Rezervă la Pensiunea Pictorilor din Baia Mare, telefonic sau pe WhatsApp: 0756 420 992. Strada Pictorilor nr. 1. Întrebări frecvente despre plată, parcare, mic dejun și anulare.",
+    "eticheta": "Contact",
+    "titlu": "Ai o întrebare? *Nu ezita să ne contactezi*",
+    "subtitlu": "Răspundem cât de repede cu putință la solicitările tale. Pentru rezervări, emiterea facturilor sau orice alte detalii, ne poți contacta prin formular sau prin telefon.",
+    "poza": "camere/camera-de-lux-hollosy-simon/13"
+  },
+  "formular": {
+    "eticheta": "Cerere de rezervare",
+    "titlu": "Rezervă *o cameră*",
+    "text": "Completează formularul și îl trimitem pe WhatsApp, cu toate detaliile completate. Îți răspundem cu disponibilitatea camerelor. Dacă preferi, ne poți suna direct.",
+    "mesajSucces": "Am deschis WhatsApp cu cererea completată. Apasă „Trimite” în WhatsApp ca să ajungă la noi."
+  },
+  "intrebari": [
+    {
+      "intrebare": "Acceptați plata cu cardul?",
+      "raspuns": "Acceptăm atât plata cu carduri emise de Maestro, Visa, American Express, cât și cu carduri de vacanță EdenRed, UpRomânia sau Sodexo."
+    },
+    {
+      "intrebare": "Acceptați animale de companie?",
+      "raspuns": "Acceptăm animale de companie, însă în funcție de talia și de rasa animalului, vom percepe o taxă pentru curățenie. Întrebați recepția pentru mai multe detalii."
+    },
+    {
+      "intrebare": "Oferiți factură?",
+      "raspuns": "Pensiunea noastră fiscalizează toate camerele vândute. Puteți primi atât bon fiscal, cât și bon cu factură fiscală."
+    },
+    {
+      "intrebare": "Aveți parcare?",
+      "raspuns": "Dispunem de o parcare privată cu capacitate de 6 locuri, iar pe stradă există o parcare publică fără taxe, cu peste 40 de locuri."
+    },
+    {
+      "intrebare": "Ce fel de mic dejun serviți?",
+      "raspuns": "Servim un mic dejun continental (șuncă, mușchi file, salam, cașcaval, cașcaval afumat, brânză brie, biscuiți, turtă dulce, pateu, dulceață, unt etc.). Nu lipsesc sucul, apa, cafeaua, ceaiul și pălinca."
+    },
+    {
+      "intrebare": "Cu cât timp înainte pot anula rezervarea?",
+      "raspuns": "Rezervarea poate fi anulată cel mai târziu cu o zi înaintea check-in-ului. Dacă, totuși, există anumite situații de forță majoră, vă rugăm să anunțați recepția (telefonic sau prin e-mail)."
+    },
+    {
+      "intrebare": "Camerele au baie proprie?",
+      "raspuns": "Toate camerele noastre au baie proprie."
+    },
+    {
+      "intrebare": "Este Pensiunea Pictorilor clasificată?",
+      "raspuns": "Da, Pensiunea Pictorilor este clasificată de Ministerul Turismului."
+    }
+  ]
+}

@@ -1,0 +1,118 @@
+---
+import { ArrowRight, Star } from '@lucide/astro';
+import { rating, roomScores, reviews, reviewSource, formatScore, showReviews } from '../data/reviews';
+import { url } from '../lib/url';
+
+interface Props {
+  /** Câte recenzii se afișează (implicit toate). */
+  limit?: number;
+  /** Link spre pagina cu toate recenziile. */
+  more?: boolean;
+}
+
+const { limit, more = false } = Astro.props;
+const list = limit ? reviews.slice(0, limit) : reviews;
+
+// Clase statice (Tailwind nu vede clase construite dinamic): lățimea barei = nota / 5
+const barWidth: Record<string, string> = {
+  '5.0': 'w-full',
+  '4.9': 'w-[98%]',
+  '4.8': 'w-[96%]',
+  '4.7': 'w-[94%]',
+  '4.6': 'w-[92%]',
+  '4.5': 'w-[90%]',
+  '4.4': 'w-[88%]',
+  '4.3': 'w-[86%]',
+  '4.2': 'w-[84%]',
+  '4.1': 'w-[82%]',
+  '4.0': 'w-[80%]',
+};
+---
+
+{showReviews && (
+<section class="relative overflow-hidden bg-cream-50 py-28 md:py-40">
+  <div class="container-x">
+    <div class="grid gap-16 lg:grid-cols-12 lg:gap-12">
+      <div class="lg:col-span-5">
+        <div class="lg:sticky lg:top-32">
+          <p class="eyebrow" data-reveal>Ce spun clienții</p>
+          <div class="mt-8 flex items-end gap-5" data-reveal>
+            <span class="font-serif text-[clamp(6rem,14vw,11rem)] leading-[0.8] tracking-[-0.05em] text-forest-800" data-count={rating.score} data-decimals="1">
+              {formatScore(rating.score)}
+            </span>
+            <span class="pb-3">
+              <span class="flex gap-0.5 text-brass-500">
+                {Array.from({ length: 5 }).map(() => <Star size={18} fill="currentColor" stroke-width={0} />)}
+              </span>
+              <span class="mt-2 block font-serif text-2xl italic text-brass-600">din {rating.max}</span>
+              <span class="mt-1 block text-sm text-muted">{rating.count} de evaluări ale camerelor</span>
+            </span>
+          </div>
+
+          <ul class="mt-12 space-y-5" data-reveal>
+            {
+              roomScores.map((c) => (
+                <li>
+                  <a href={url(`/camere/${c.slug}`)} class="group block">
+                    <div class="flex items-baseline justify-between gap-4 text-sm">
+                      <span class="font-semibold text-forest-800 transition-colors group-hover:text-brass-600">{c.label}</span>
+                      <span class="shrink-0"><span class="font-serif text-lg">{formatScore(c.score)}</span> <span class="text-xs text-muted">({c.count})</span></span>
+                    </div>
+                    <div class="mt-2 h-[3px] overflow-hidden rounded-full bg-forest-900/10">
+                      <div class:list={['h-full rounded-full bg-gradient-to-r from-river-500 to-brass-400', barWidth[c.score.toFixed(1)] ?? 'w-full']} data-bar />
+                    </div>
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+      </div>
+
+      <div class="flex flex-col gap-6 lg:col-span-7 lg:pl-8">
+        {
+          list.map((r, i) => (
+            <figure
+              class:list={[
+                'relative rounded-[1.75rem] border border-forest-900/10 bg-cream-100 p-8 md:p-10',
+                i % 3 === 1 && 'lg:ml-16',
+                i % 3 === 2 && 'lg:ml-8',
+              ]}
+              data-reveal
+              data-delay={(i % 3) * 0.08}
+            >
+              <div class="flex items-start justify-between gap-6">
+                <svg viewBox="0 0 48 36" class="h-8 w-10 text-brass-400" fill="currentColor" aria-hidden="true">
+                  <path d="M0 36V21.6C0 9.6 6.4 2.4 19.2 0l2.2 4.6C14.6 6.6 11 10.4 10.6 16H19v20H0Zm27 0V21.6C27 9.6 33.4 2.4 46.2 0l1.8 4.6C41.6 6.6 38 10.4 37.6 16H46v20H27Z" />
+                </svg>
+                <span class="inline-flex items-center gap-1.5 rounded-full border border-forest-900/10 px-3 py-1.5 text-sm font-semibold">
+                  <Star size={13} fill="currentColor" stroke-width={0} class="text-brass-500" /> {formatScore(r.score)}
+                </span>
+              </div>
+              <blockquote class="mt-6 font-serif text-[clamp(1.3rem,1.9vw,1.65rem)] leading-[1.38] text-forest-900">
+                „{r.text}”
+              </blockquote>
+              <figcaption class="mt-8 flex items-center gap-4">
+                <span class="flex h-11 w-11 items-center justify-center rounded-full bg-forest-800 font-serif text-lg text-cream-50">
+                  {r.name.charAt(0)}
+                </span>
+                <span>
+                  <span class="block font-semibold">{r.name}</span>
+                  <span class="block text-xs uppercase tracking-[0.16em] text-muted">{[r.room, reviewSource].filter(Boolean).join(' · ')}</span>
+                </span>
+              </figcaption>
+            </figure>
+          ))
+        }
+        {
+          more && reviews.length > list.length && (
+            <a href={url('/recenzii')} class="btn btn-dark self-start" data-reveal>
+              Toate recenziile ({reviews.length}) <ArrowRight size={16} />
+            </a>
+          )
+        }
+      </div>
+    </div>
+  </div>
+</section>
+)}

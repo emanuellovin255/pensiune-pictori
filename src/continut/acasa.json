@@ -1,0 +1,63 @@
+{
+  "seo": {
+    "descriere": "Cazare în Baia Mare, în centrul vechi, la Pensiunea Pictorilor: raport calitate-preț excelent, mic dejun inclus, parcare gratuită, WiFi și aer condiționat. Rezervări: 0756 420 992."
+  },
+  "hero": {
+    "eticheta": "Cazare în Baia Mare · Centrul Vechi",
+    "titlu": "Pensiunea *Pictorilor*",
+    "subtitlu": "În centrul vechi al orașului, foarte aproape de mers pe jos de majoritatea locațiilor importante din Baia Mare. Raport calitate-preț excelent, cu mic dejun inclus.",
+    "textPret": "Pe noapte, mic dejun inclus",
+    "poze": [
+      "camere/camera-de-lux-veso-agoston/18",
+      "camere/camera-de-lux-hollosy-simon/01",
+      "camere/apartament-eugen-pascu/01",
+      "camere/camera-matrimoniala/01"
+    ]
+  },
+  "despre": {
+    "eticheta": "Bine ai venit",
+    "citat": "Pe strada unde, acum mai bine de un secol, își căutau chirie pictorii veniți la Baia Mare, te așteaptă o pensiune de familie: un loc prietenos, curat, învăluit în liniște și pace.",
+    "titlu": "Cazare în Baia Mare, *în centrul orașului*",
+    "text1": "Pensiunea Pictorilor este localizată în centrul vechi al orașului, foarte aproape de mers pe jos de majoritatea locațiilor importante din Baia Mare.",
+    "text2": "Raport calitate-preț excelent pentru cazare cu mic dejun inclus, parcare, WiFi și aer condiționat. Colonia Pictorilor este vizavi, la 30 de metri de ușa pensiunii.",
+    "pozaMare": "camere/camera-de-lux-veso-agoston/17",
+    "pozaMica": "camere/camera-matrimoniala/09"
+  },
+  "cifre": [
+    { "valoare": "9", "sufix": "", "text": "Camere, de la single la apartament pentru familie" },
+    { "valoare": "4,7", "sufix": "/5", "text": "Nota medie a camerelor, din recenziile oaspeților" },
+    { "valoare": "30", "sufix": " m", "text": "Până la Colonia Pictorilor, vizavi de pensiune" },
+    { "valoare": "2009", "sufix": "", "text": "Anul în care am deschis porțile pensiunii" }
+  ],
+  "cuvinteBanda": ["Centrul Vechi", "Colonia Pictorilor", "Mic dejun inclus", "Parcare gratuită", "Maramureș"],
+  "beneficii": {
+    "eticheta": "Inclus în preț",
+    "titlu": "Tot ce îți trebuie, *fără costuri ascunse*",
+    "lista": [
+      { "icon": "Coffee", "titlu": "Mic dejun", "text": "Mic dejun continental, inclus în prețul cazării, cu cafea, ceai, suc și pălincă." },
+      { "icon": "Wifi", "titlu": "WiFi gratuit", "text": "Internet de mare viteză în toate camerele." },
+      { "icon": "Snowflake", "titlu": "Aer condiționat", "text": "Temperatură optimă vara și iarna, în aproape toate camerele." },
+      { "icon": "Bath", "titlu": "Baie în cameră", "text": "Toate camerele au baie proprie, cu duș." },
+      { "icon": "Refrigerator", "titlu": "Frigider", "text": "Frigider în fiecare cameră, pentru băuturi și gustări." },
+      { "icon": "Tv", "titlu": "TV în cameră", "text": "Televizor cu ecran plat și canale prin cablu." },
+      { "icon": "SquareParking", "titlu": "Parcare gratuită", "text": "Parcare privată cu 6 locuri și peste 40 de locuri publice gratuite pe stradă." },
+      { "icon": "Clock", "titlu": "Check-in zilnic", "text": "Zilnic după ora 14:00, cu recepție deschisă non-stop." }
+    ]
+  },
+  "camere": {
+    "eticheta": "Camere recomandate pentru tine",
+    "titlu": "Nouă camere, *nouă povești*",
+    "text": "De la camera single pentru călătoriile de afaceri, până la apartamentul Eugen Pascu pentru familii. Multe dintre camere poartă numele pictorilor care au trăit la Baia Mare.",
+    "link": "Toate camerele și tarifele"
+  },
+  "locatie": {
+    "eticheta": "Unde vei fi",
+    "titlu": "Strada Pictorilor nr. 1, *Baia Mare*",
+    "text": "În centrul vechi, pe strada unde locuiau odinioară artiștii Coloniei. Turnul Ștefan, Muzeul Satului și Planetariul sunt la câteva minute de mers pe jos."
+  },
+  "obiective": {
+    "eticheta": "Descoperă lucruri de făcut",
+    "titlu": "Ce vizitezi *lângă pensiune*",
+    "text": "Cele mai interesante obiective turistice din Baia Mare sunt la câteva minute de mers pe jos de Pensiunea Pictorilor."
+  }
+}

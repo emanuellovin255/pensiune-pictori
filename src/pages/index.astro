@@ -1,0 +1,318 @@
+---
+import { Image } from 'astro:assets';
+import { ArrowRight, ArrowUpRight, Star, Footprints } from '@lucide/astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import BookingBar from '../components/BookingBar.astro';
+import Marquee from '../components/Marquee.astro';
+import RoomCard from '../components/RoomCard.astro';
+import SightCard from '../components/SightCard.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import FacilityGrid from '../components/FacilityGrid.astro';
+import ReviewScores from '../components/ReviewScores.astro';
+import MapEmbed from '../components/MapEmbed.astro';
+import VoucherBand from '../components/VoucherBand.astro';
+import CTASection from '../components/CTASection.astro';
+import { rooms, minPrice } from '../data/rooms';
+import { site } from '../data/site';
+import { sights } from '../data/sights';
+import { rating, formatScore, showReviews } from '../data/reviews';
+import { acasa as a, em } from '../lib/continut';
+import { photo } from '../lib/photos';
+import { url } from '../lib/url';
+
+const hero = a.hero;
+const slides = hero.poze.filter(Boolean).map((p) => photo(p));
+
+const stats = a.cifre.map((s) => {
+  const raw = String(s.valoare ?? '').trim();
+  const num = Number(raw.replace(',', '.'));
+  const decimals = /[.,]/.test(raw) ? 1 : 0;
+  return { raw, num, decimals, suffix: s.sufix, label: s.text, numeric: raw !== '' && Number.isFinite(num) };
+});
+---
+
+<BaseLayout intro image={slides[0]} description={a.seo.descriere}>
+  <!-- HERO -->
+  <section class="relative flex min-h-[100svh] flex-col overflow-hidden bg-forest-950 text-white" data-hero>
+    <div class="absolute inset-0" data-hero-slides>
+      {
+        slides.map((src, i) => (
+          <div class:list={['hero-slide absolute inset-0', i === 0 && 'is-active']} aria-hidden="true">
+            <Image
+              src={src}
+              alt=""
+              widths={[768, 1280, 1920, 2400]}
+              sizes="100vw"
+              loading={i === 0 ? 'eager' : 'lazy'}
+              fetchpriority={i === 0 ? 'high' : undefined}
+              class="img-cover"
+            />
+          </div>
+        ))
+      }
+      <div class="absolute inset-0 bg-gradient-to-b from-forest-950/60 via-forest-950/35 to-forest-950/90"></div>
+      <div class="absolute inset-0 bg-gradient-to-r from-forest-950/65 via-forest-950/25 to-transparent"></div>
+    </div>
+
+    <div class="container-x relative flex flex-1 flex-col justify-end pb-10 pt-36 md:pb-14" data-hero-fade>
+      <div class="flex items-center gap-3 text-[0.7rem] font-bold uppercase tracking-[0.26em] text-white/85" data-reveal>
+        <span class="h-px w-9 bg-brass-300"></span>
+        {hero.eticheta}
+      </div>
+
+      <h1 class="display-xl mt-6 max-w-[12ch]" data-split="hero" set:html={em(hero.titlu, 'text-brass-300')} />
+
+      <div class="mt-8 grid items-end gap-10 lg:grid-cols-12">
+        <p class="max-w-lg text-lg leading-relaxed text-white/85 md:text-xl lg:col-span-5" data-reveal>
+          {hero.subtitlu}
+        </p>
+        <div class="hidden items-center justify-end gap-6 lg:col-span-7 lg:flex" data-reveal>
+          {
+            showReviews && rating.score > 0 && (
+              <>
+                <div class="text-right">
+                  <p class="flex items-center justify-end gap-2 font-serif text-4xl leading-none">
+                    <Star size={22} fill="currentColor" stroke-width={0} class="text-brass-300" />
+                    {formatScore(rating.score)}
+                  </p>
+                  <p class="mt-1 text-[0.65rem] font-bold uppercase tracking-[0.2em] text-white/70">{rating.count} evaluări ale camerelor</p>
+                </div>
+                <span class="h-12 w-px bg-white/25" />
+              </>
+            )
+          }
+          {
+            minPrice > 0 && (
+              <div>
+                <p class="font-serif text-4xl leading-none"><span class="text-lg italic">de la</span> {minPrice} <span class="text-lg">lei</span></p>
+                <p class="mt-1 text-[0.65rem] font-bold uppercase tracking-[0.2em] text-white/70">{hero.textPret}</p>
+              </div>
+            )
+          }
+        </div>
+      </div>
+
+      <div class="mt-10" data-reveal>
+        <BookingBar />
+      </div>
+
+      <div class="mt-8 flex items-center justify-between text-[0.7rem] font-bold uppercase tracking-[0.22em] text-white/70">
+        <a href="#despre" class="flex items-center gap-3">
+          <span class="scroll-cue relative block h-10 w-px overflow-hidden bg-white/25"></span>
+          Descoperă
+        </a>
+        {
+          slides.length > 1 && (
+            <div class="hidden items-center gap-2 sm:flex" aria-hidden="true">
+              {slides.map((_, i) => (
+                <span class:list={['hero-dot h-[2px] w-8 bg-white/30', i === 0 && 'is-active']} data-hero-dot />
+              ))}
+            </div>
+          )
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- DESPRE -->
+  <section id="despre" class="relative bg-cream-100 pb-28 pt-28 md:pb-40 md:pt-40">
+    <div class="container-x">
+      <p class="eyebrow" data-reveal>{a.despre.eticheta}</p>
+      <p class="mt-10 max-w-6xl font-serif text-[clamp(1.9rem,4.4vw,4.1rem)] leading-[1.12] tracking-[-0.02em] text-forest-900" data-scrub-words>
+        {a.despre.citat}
+      </p>
+
+      <div class="mt-24 grid items-center gap-16 md:mt-32 lg:grid-cols-12 lg:gap-10">
+        <div class="relative lg:col-span-7">
+          <div class="relative aspect-[4/5] overflow-hidden rounded-[1.75rem] md:aspect-[5/4]" data-reveal-img>
+            <Image src={photo(a.despre.pozaMare)} alt={`Cameră la ${site.name}`} widths={[640, 1024, 1400]} sizes="(min-width: 1024px) 55vw, 100vw" class="img-cover" />
+          </div>
+          <div class="absolute -bottom-10 right-4 hidden w-[36%] overflow-hidden rounded-[1.25rem] border-[6px] border-cream-100 shadow-2xl md:block lg:-right-10" data-reveal-img data-delay="0.2">
+            <div class="aspect-[3/4]">
+              <Image src={photo(a.despre.pozaMica)} alt="Portret pictat, pe peretele unei camere" widths={[400, 700]} sizes="25vw" class="img-cover" />
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-5 lg:pl-10">
+          <h2 class="display-md" data-split set:html={em(a.despre.titlu)} />
+          <p class="lead mt-8" data-reveal>{a.despre.text1}</p>
+          {a.despre.text2 && <p class="mt-5 text-muted" data-reveal>{a.despre.text2}</p>}
+          <div class="mt-10 flex flex-wrap gap-4" data-reveal>
+            <a href={url('/camere')} class="btn btn-dark">Vezi camerele <ArrowRight size={16} /></a>
+            <a href={url('/despre-noi')} class="btn btn-ghost-dark">Povestea noastră</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CIFRE -->
+  {
+    stats.length > 0 && (
+      <section class="bg-cream-100">
+        <div class="container-x">
+          <div class="grid grid-cols-2 gap-px overflow-hidden rounded-[1.75rem] bg-forest-900/10 lg:grid-cols-4">
+            {stats.map((s, i) => (
+              <div class="bg-cream-100 px-5 py-10 md:px-10 md:py-14" data-reveal data-delay={i * 0.06}>
+                <p class="font-serif text-[clamp(2.8rem,6vw,5.2rem)] leading-none tracking-[-0.04em] text-forest-800">
+                  {s.numeric ? (
+                    <span data-count={s.num} data-decimals={s.decimals}>{s.raw}</span>
+                  ) : (
+                    <span>{s.raw}</span>
+                  )}
+                  <span class="text-brass-500">{s.suffix}</span>
+                </p>
+                <p class="mt-4 max-w-[16rem] text-sm leading-snug text-muted">{s.label}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    )
+  }
+
+  <Marquee words={a.cuvinteBanda.filter(Boolean)} class="bg-cream-100 text-forest-800" />
+
+  <!-- CAMERE (scroll orizontal pe desktop) -->
+  <section class="relative bg-forest-900 text-cream-50 lg:h-[100svh]" data-hscroll>
+    <div class="flex h-full flex-col justify-center py-24 lg:py-0">
+      <div class="container-x flex flex-col justify-between gap-8 md:flex-row md:items-end">
+        <div class="max-w-2xl">
+          <p class="eyebrow eyebrow-light" data-reveal>{a.camere.eticheta}</p>
+          <h2 class="display-lg mt-6" data-split set:html={em(a.camere.titlu, 'text-brass-300')} />
+        </div>
+        <div class="max-w-sm" data-reveal>
+          <p class="text-cream-100/70">{a.camere.text}</p>
+          <a href={url('/camere')} class="arrow-link mt-6 text-brass-300">{a.camere.link} <ArrowRight size={16} /></a>
+        </div>
+      </div>
+
+      <div class="h-scroll mt-12 overflow-x-auto lg:mt-14 lg:overflow-hidden" data-hscroll-viewport>
+        <div class="flex w-max gap-5 px-[var(--gutter)] md:gap-7" data-hscroll-track>
+          {rooms.map((room, i) => <RoomCard room={room} index={i} class="w-[80vw] shrink-0 sm:w-[24rem] lg:w-[min(26vw,calc((100svh-21rem)*0.8))]" />)}
+          <a
+            href={url('/camere')}
+            class="group flex w-[80vw] shrink-0 flex-col justify-between rounded-[1.75rem] border border-cream-100/15 p-8 transition-colors duration-500 hover:border-brass-400 sm:w-[20rem] lg:w-[18vw]"
+          >
+            <span class="eyebrow eyebrow-light">Tarife</span>
+            <span>
+              <span class="block font-serif text-4xl leading-tight">Vezi toate tarifele</span>
+              <span class="mt-6 flex h-14 w-14 items-center justify-center rounded-full bg-brass-400 text-forest-900 transition-transform duration-500 group-hover:rotate-45">
+                <ArrowUpRight size={22} />
+              </span>
+            </span>
+          </a>
+        </div>
+      </div>
+
+      <div class="container-x mt-10 hidden lg:block">
+        <div class="h-px w-full bg-cream-100/15">
+          <div class="h-px origin-left scale-x-0 bg-brass-400" data-hscroll-bar></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BENEFICII -->
+  <section class="bg-cream-100 py-28 md:py-40">
+    <div class="container-x">
+      <div class="mb-16 flex flex-col justify-between gap-8 md:flex-row md:items-end">
+        <SectionHeading eyebrow={a.beneficii.eticheta} title={em(a.beneficii.titlu)} size="md" />
+        <a href={url('/contact#intrebari')} class="btn btn-ghost-dark shrink-0" data-reveal>Întrebări frecvente <ArrowRight size={16} /></a>
+      </div>
+      <FacilityGrid />
+    </div>
+  </section>
+
+  <ReviewScores limit={3} more />
+
+  <!-- UNDE VEI FI -->
+  <section class="grain relative overflow-hidden bg-forest-900 py-28 text-cream-50 md:py-40">
+    <div class="container-x grid items-center gap-16 lg:grid-cols-12 lg:gap-12">
+      <div class="lg:col-span-5">
+        <SectionHeading eyebrow={a.locatie.eticheta} title={em(a.locatie.titlu, 'text-brass-300')} text={a.locatie.text} light size="md" />
+        <ul class="mt-12 border-t border-cream-100/12" data-reveal>
+          {
+            sights.map((s) => (
+              <li>
+                <a href={url(`/locatii/${s.slug}`)} class="group flex items-baseline justify-between gap-6 border-b border-cream-100/12 py-4">
+                  <span class="text-cream-100/85 transition-colors group-hover:text-brass-300">{s.name}</span>
+                  <span class="flex shrink-0 items-center gap-2 font-serif text-xl text-brass-300">
+                    <Footprints size={14} class="text-cream-100/50" /> {s.distance}
+                  </span>
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+        <div class="mt-10 flex flex-wrap gap-4" data-reveal>
+          <a href={url('/contact')} class="btn btn-brass">Rezervă o cameră <ArrowRight size={16} /></a>
+        </div>
+      </div>
+      <div class="lg:col-span-7" data-reveal>
+        <MapEmbed class="h-[560px]" />
+      </div>
+    </div>
+  </section>
+
+  <!-- OBIECTIVE -->
+  <section class="bg-cream-100 py-28 md:py-40">
+    <div class="container-x">
+      <div class="mb-16 flex flex-col justify-between gap-8 md:flex-row md:items-end">
+        <SectionHeading eyebrow={a.obiective.eticheta} title={em(a.obiective.titlu)} text={a.obiective.text} size="md" />
+        <a href={url('/locatii')} class="btn btn-ghost-dark shrink-0" data-reveal>Toate obiectivele <ArrowRight size={16} /></a>
+      </div>
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {sights.map((s, i) => <SightCard sight={s} class:list={[i % 3 === 1 && 'lg:translate-y-12']} />)}
+      </div>
+    </div>
+  </section>
+
+  <VoucherBand />
+
+  <CTASection />
+</BaseLayout>
+
+<style>
+  .hero-slide {
+    opacity: 0;
+    transition: opacity 1.6s var(--ease-in-out-quart);
+  }
+  .hero-slide.is-active {
+    opacity: 1;
+  }
+  .hero-slide :global(img) {
+    transform: scale(1.12);
+  }
+  .hero-slide.is-active :global(img) {
+    animation: kenburns 9s linear both;
+  }
+  @keyframes kenburns {
+    from { transform: scale(1.12); }
+    to { transform: scale(1); }
+  }
+  .hero-dot {
+    transition: background-color 0.6s ease;
+  }
+  .hero-dot.is-active {
+    background: var(--color-brass-300);
+  }
+</style>
+
+<script>
+  // Hero: pozele se schimbă singure, cu fade; se oprește dacă vizitatorul a cerut mișcare redusă.
+  const slides = Array.from(document.querySelectorAll<HTMLElement>('[data-hero-slides] .hero-slide'));
+  const dots = Array.from(document.querySelectorAll<HTMLElement>('[data-hero-dot]'));
+  if (slides.length > 1 && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    let current = 0;
+    setInterval(() => {
+      if (document.hidden) return;
+      slides[current].classList.remove('is-active');
+      dots[current]?.classList.remove('is-active');
+      current = (current + 1) % slides.length;
+      slides[current].classList.add('is-active');
+      dots[current]?.classList.add('is-active');
+    }, 6500);
+  }
+</script>

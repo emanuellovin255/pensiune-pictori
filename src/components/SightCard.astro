@@ -1,0 +1,39 @@
+---
+import { Image } from 'astro:assets';
+import { ArrowUpRight, Footprints } from '@lucide/astro';
+import type { Sight } from '../data/sights';
+import { photo } from '../lib/photos';
+import { url } from '../lib/url';
+
+interface Props {
+  sight: Sight;
+  class?: string;
+}
+
+const { sight, class: className = '' } = Astro.props;
+---
+
+<a href={url(`/locatii/${sight.slug}`)} class:list={['group relative block overflow-hidden rounded-[1.75rem] bg-forest-900 text-white', className]}>
+  <div class="aspect-[4/5] overflow-hidden">
+    <Image
+      src={photo(sight.photo)}
+      alt={sight.name}
+      widths={[400, 700, 1000]}
+      sizes="(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 90vw"
+      class="img-cover transition-transform duration-[1.6s] ease-[var(--ease-out-expo)] group-hover:scale-[1.06]"
+    />
+  </div>
+  <div class="absolute inset-0 bg-gradient-to-t from-forest-950/90 via-forest-950/20 to-transparent"></div>
+  <span class="absolute left-5 top-5 inline-flex items-center gap-1.5 rounded-full border border-white/25 bg-white/10 px-3.5 py-1.5 text-[0.65rem] font-bold uppercase tracking-[0.16em] backdrop-blur-md">
+    <Footprints size={13} /> {sight.distance}
+  </span>
+  <div class="absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 p-6 md:p-7">
+    <div>
+      <h3 class="font-serif text-[1.8rem] leading-[1.05]">{sight.name}</h3>
+      <p class="mt-2 text-sm text-white/75">{sight.walk}</p>
+    </div>
+    <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-white/30 transition-all duration-500 group-hover:rotate-45 group-hover:border-brass-400 group-hover:bg-brass-400 group-hover:text-forest-900">
+      <ArrowUpRight size={20} stroke-width={1.6} />
+    </span>
+  </div>
+</a>

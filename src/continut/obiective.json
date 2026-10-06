@@ -1,0 +1,109 @@
+{
+  "pagina": {
+    "titluSeo": "Obiective turistice în Baia Mare",
+    "descriereSeo": "Locuri de vizitat lângă Pensiunea Pictorilor din Baia Mare: Colonia Pictorilor, Muzeul Satului, Turnul Ștefan, Planetariul, Bastionul Măcelarilor și Muzeul de Mineralogie.",
+    "eticheta": "Descoperă lucruri de făcut",
+    "titlu": "Baia Mare, *la câțiva pași*",
+    "subtitlu": "Cele mai interesante obiective turistice de lângă pensiune. Toate se pot vizita pe jos, fără să mai muți mașina din parcare.",
+    "poza": "obiective/turnul-stefan/01"
+  },
+  "obiective": [
+    {
+      "slug": "colonia-pictorilor",
+      "nume": "Colonia Pictorilor",
+      "pret": 2,
+      "descriere": [
+        "Şcoala liberă de pictură de la Baia Mare a fost iniţiată în anul 1896 de pictorul Hollósy Simon, care a trăit şi la München. Ferenczy Károly, Thorma János, Réti István, Grünwald Iványi Béla, unii dintre cei mai importanţi artişti veniţi cu Hollósy, au dezvoltat încetul cu încetul demersul de a picta după natură, regăsind în creaţia lor tot mai multe compoziţii specifice plein-air-ismului.",
+        "Prin grija administrației de atunci, aceștia au primit 1,3 hectare de teren pentru a-și construi ateliere. Acest loc poartă azi numele de Colonia Pictorilor."
+      ],
+      "distanta": "30 m",
+      "timp": "1 minut de mers pe jos",
+      "program": ["Marți – Duminică: 10:00 – 18:00"],
+      "telefon": "0362 803 225",
+      "bilete": ["Prețul biletului nu este afișat"],
+      "adresa": "Strada Victoriei 21, Baia Mare 430142",
+      "poza": "obiective/colonia-pictorilor/01"
+    },
+    {
+      "slug": "muzeul-satului",
+      "nume": "Muzeul Satului",
+      "pret": 10,
+      "descriere": [
+        "Muzeul este amenajat în aer liber și prezintă monumente de arhitectură populară care reprezintă cele patru regiuni ale județului: Chioar, Codru, Lăpuș și Maramureșul Istoric.",
+        "Casa tradițională reprezintă centrul gospodăriei împreună cu anexele sale: șură, grajd, gălbănaș, iar în interior se reflectă modul de viață din acele vremuri."
+      ],
+      "distanta": "300 m",
+      "timp": "5 minute de mers pe jos",
+      "program": ["Marți – Duminică: 10:00 – 18:00", "Luni: închis"],
+      "telefon": "0262 276 895",
+      "bilete": ["Adulți: 10 lei", "Pensionari: 5 lei", "Preșcolari, elevi, studenți: 3 lei"],
+      "adresa": "Strada Dealul Florilor nr. 1, Baia Mare 430165",
+      "poza": "obiective/muzeul-satului/01"
+    },
+    {
+      "slug": "turnul-stefan",
+      "nume": "Turnul Ștefan",
+      "pret": 10,
+      "descriere": [
+        "Turnul Ștefan este turnul-clopotniță al fostei biserici cu hramul „Sfântul Rege Ștefan” din Baia Mare. Turnul este situat între străzile Crișan și 1 Mai, în imediata apropiere a Pieței Libertății – Piața Centrală (Circulus fori) – a vechiului oraș. A fost construit în secolul al XV-lea.",
+        "Prima atestare documentară a bisericii „Sfântul Ștefan” datează din 1347, însă construcția este inaugurată oficial abia în 1387.",
+        "Turnul, construit din piatră masivă, a fost ridicat la inițiativa principelui Ioan de Hunedoara, pentru a marca victoria de la Ialomița (1442) împotriva otomanilor. Construcția turnului începe după anul 1446, însă este finalizată abia în 1468, sub domnia lui Matia Corvinul."
+      ],
+      "distanta": "500 m",
+      "timp": "8 minute de mers pe jos",
+      "program": ["Luni – Vineri: 9:00 – 16:00", "Sâmbătă – Duminică: 12:00 – 14:00"],
+      "telefon": "0262 211 003",
+      "bilete": ["Adulți: 10 lei", "Elevi: 5 lei"],
+      "adresa": "Piața Cetății, Baia Mare",
+      "poza": "obiective/turnul-stefan/01"
+    },
+    {
+      "slug": "planetariu",
+      "nume": "Planetariul",
+      "pret": 10,
+      "descriere": [
+        "Planetariul Baia Mare a fost inaugurat la data de 1 iulie 1969, fiind primul planetariu public din România şi unicul din Transilvania. Deşi programul de execuţie al clădirii trebuia să aibă loc între anii 1967 și 1970, recepţia pentru planetariu s-a realizat abia în vara anului 1969, iar cea pentru etapa a doua în anul 1973.",
+        "Acesta a aparţinut până în luna ianuarie 1991 primăriei municipiului Baia Mare. Începând cu această lună, printr-o decizie a „Inspectoratului pentru Cultură” şi cu acordul primăriei, complexul astronomic a fost trecut în cadrul Muzeului Judeţean Maramureş."
+      ],
+      "distanta": "700 m",
+      "timp": "12 minute de mers pe jos",
+      "program": ["Luni – Vineri: 8:00 – 16:00"],
+      "telefon": "0362 401 921",
+      "bilete": ["Adulți: 10 lei", "Elevi: 5 lei"],
+      "adresa": "Strada George Coșbuc 16, Baia Mare 430245",
+      "poza": "obiective/planetariu/01"
+    },
+    {
+      "slug": "bastionul-macelarilor",
+      "nume": "Bastionul Măcelarilor",
+      "pret": 6,
+      "descriere": [
+        "Pe 9 noiembrie 1469, printr-un document privilegial, regele Matia Corvin permite oraşului Baia Mare să ridice ziduri de piatră în scop de apărare, ziduri care erau străjuite de șapte turnuri.",
+        "Bastionul Măcelarilor a făcut parte din această împrejmuire de piatră, străjuind Poarta de Sud a cetăţii, una din cele patru porţi principale de intrare în oraş."
+      ],
+      "distanta": "900 m",
+      "timp": "15 minute de mers pe jos",
+      "program": ["Luni – Vineri: 8:00 – 16:00"],
+      "telefon": "0262 211 924",
+      "bilete": ["Adulți: 6 lei", "Elevi: 3 lei"],
+      "adresa": "Piața Izvoarelor 2, Baia Mare",
+      "poza": "obiective/bastionul-macelarilor/01"
+    },
+    {
+      "slug": "muzeul-de-mineralogie",
+      "nume": "Muzeul de Mineralogie",
+      "pret": 10,
+      "descriere": [
+        "Muzeul de Mineralogie din Baia Mare este cel mai mare muzeu regional din Europa, multe dintre exponate fiind considerate unicate mondiale și valori de patrimoniu. Denumirea neoficială, culturală prin excelență și unanim folosită, este Muzeul florilor de mină.",
+        "„Floarea de mină este un eșantion mineral recoltat din subteran, monomineral sau format din mai multe minerale, posedând calități estetice deosebite datorită concreșterii cristalelor, culorii, formelor, dimensiunilor de excepție ale unor cristale componente, care în totalitate fac ca piesa să fie bine individualizată față de celelalte.” (Victor Gorduza, directorul instituției)"
+      ],
+      "distanta": "1,2 km",
+      "timp": "20 de minute de mers pe jos",
+      "program": ["Marți – Duminică: 9:00 – 17:00"],
+      "telefon": "0262 227 517",
+      "bilete": ["Adulți: 10 lei", "Studenți: 3 lei"],
+      "adresa": "Bulevardul Traian 8, Baia Mare 430212",
+      "poza": "obiective/muzeul-de-mineralogie/01"
+    }
+  ]
+}

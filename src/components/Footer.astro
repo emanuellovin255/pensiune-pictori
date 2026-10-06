@@ -1,0 +1,110 @@
+---
+import { Phone, MapPin, ArrowUpRight, CreditCard, Clock } from '@lucide/astro';
+import Logo from './Logo.astro';
+import WhatsAppIcon from './WhatsAppIcon.astro';
+import SocialLinks from './SocialLinks.astro';
+import { nav, site, mapsLink } from '../data/site';
+import { rooms } from '../data/rooms';
+import { general, em } from '../lib/continut';
+import { url } from '../lib/url';
+
+const year = new Date().getFullYear();
+const f = site.company;
+---
+
+<footer class="grain relative overflow-hidden bg-forest-950 pb-28 text-cream-100 lg:pb-0">
+  <div class="container-x relative pt-24 lg:pt-32">
+    <div class="grid gap-14 lg:grid-cols-12 lg:gap-10">
+      <div class="lg:col-span-4">
+        <Logo class="text-cream-50" />
+        <p class="mt-7 max-w-sm text-[0.95rem] leading-relaxed text-cream-100/65">
+          {general.subsol.text}
+        </p>
+        <div class="mt-8 inline-flex items-start gap-3 rounded-2xl border border-cream-100/10 bg-cream-100/[0.04] p-4 text-sm text-cream-100/80">
+          <CreditCard size={20} stroke-width={1.5} class="mt-0.5 shrink-0 text-brass-400" />
+          <span>{general.subsol.plata}</span>
+        </div>
+        <SocialLinks class="mt-8 text-cream-100/80" />
+      </div>
+
+      <div class="lg:col-span-3">
+        <h3 class="eyebrow eyebrow-light font-sans">Unde ne găsești</h3>
+        <ul class="mt-6 space-y-4 text-[0.95rem]">
+          <li>
+            <a href={mapsLink} target="_blank" rel="noopener noreferrer" class="group flex gap-3 text-cream-100/80 transition-colors hover:text-cream-50">
+              <MapPin size={18} stroke-width={1.5} class="mt-1 shrink-0 text-brass-400" />
+              <span>{site.address.street}<br />{site.address.city}, {site.address.county}</span>
+            </a>
+          </li>
+          <li>
+            <a href={site.phoneHref} class="flex items-center gap-3 text-cream-100/80 transition-colors hover:text-cream-50">
+              <Phone size={18} stroke-width={1.5} class="shrink-0 text-brass-400" />
+              {site.phone}
+            </a>
+          </li>
+          <li>
+            <a href={site.whatsappHref} target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 text-cream-100/80 transition-colors hover:text-cream-50">
+              <WhatsAppIcon size={18} class="shrink-0 text-brass-400" />
+              WhatsApp: {site.whatsapp}
+            </a>
+          </li>
+          <li class="flex items-start gap-3 text-cream-100/80">
+            <Clock size={18} stroke-width={1.5} class="mt-1 shrink-0 text-brass-400" />
+            <span>Check-in {site.checkIn}<br />Check-out {site.checkOut}<br />Recepție non-stop</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="lg:col-span-2">
+        <h3 class="eyebrow eyebrow-light font-sans">Linkuri utile</h3>
+        <ul class="mt-6 space-y-3 text-[0.95rem]">
+          <li><a href={url('/')} class="link-underline text-cream-100/80 hover:text-cream-50">Acasă</a></li>
+          {
+            nav.map((item) => (
+              <li>
+                <a href={url(item.href)} class="link-underline text-cream-100/80 hover:text-cream-50">
+                  {item.label}
+                </a>
+              </li>
+            ))
+          }
+          <li><a href={url('/termeni-si-conditii')} class="link-underline text-cream-100/80 hover:text-cream-50">Termeni și condiții</a></li>
+        </ul>
+      </div>
+
+      <div class="lg:col-span-3">
+        <h3 class="eyebrow eyebrow-light font-sans">Camere</h3>
+        <ul class="mt-6 space-y-2.5 text-[0.95rem]">
+          {
+            rooms.map((r) => (
+              <li class="flex items-baseline justify-between gap-4">
+                <a href={url(`/camere/${r.slug}`)} class="link-underline text-cream-100/80 hover:text-cream-50">{r.short}</a>
+                <span class="shrink-0 font-serif text-brass-300">{r.price} lei</span>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </div>
+
+    <div class="mt-20 flex flex-col items-start justify-between gap-6 border-t border-cream-100/10 py-8 text-xs text-cream-100/65 md:flex-row md:items-center">
+      <p>
+        © 2009–{year} {site.name}. Toate drepturile rezervate.
+        <span class="mt-1 block">{f.denumire} · CUI {f.cui} · {f.registruComert} · Certificat de clasificare nr. {f.certificatClasificare}</span>
+      </p>
+      <div class="flex flex-wrap items-center gap-x-6 gap-y-2">
+        <a href={site.whatsappHref} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 hover:text-cream-50">
+          Rezervări pe WhatsApp <ArrowUpRight size={13} />
+        </a>
+        <a href={url('/termeni-si-conditii')} class="hover:text-cream-50">Termeni și condiții</a>
+        <a href="https://anpc.ro/" target="_blank" rel="noopener noreferrer" class="hover:text-cream-50">ANPC</a>
+      </div>
+    </div>
+  </div>
+
+  <div aria-hidden="true" class="pointer-events-none select-none overflow-hidden">
+    <p class="whitespace-nowrap text-center font-serif text-[13vw] leading-[0.8] tracking-[-0.05em] text-cream-100/[0.05] soft-serif">
+      <Fragment set:html={em(general.numeScurt.replace(/^(\S+)\s+(.+)$/, '$1 *$2*'))} />
+    </p>
+  </div>
+</footer>

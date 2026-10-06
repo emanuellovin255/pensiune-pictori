@@ -1,0 +1,62 @@
+---
+import { Footprints, Ticket } from '@lucide/astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import SectionHeading from '../../components/SectionHeading.astro';
+import SightCard from '../../components/SightCard.astro';
+import MapEmbed from '../../components/MapEmbed.astro';
+import CTASection from '../../components/CTASection.astro';
+import { sights } from '../../data/sights';
+import { photo } from '../../lib/photos';
+import { url } from '../../lib/url';
+import { obiective as o, em } from '../../lib/continut';
+
+const p = o.pagina;
+---
+
+<BaseLayout title={p.titluSeo} description={p.descriereSeo} image={photo(p.poza)}>
+  <PageHero
+    eyebrow={p.eticheta}
+    crumb="Obiective"
+    title={em(p.titlu, 'text-brass-300')}
+    subtitle={p.subtitlu}
+    image={photo(p.poza)}
+    alt="Turnul Ștefan din Baia Mare"
+  />
+
+  <section class="bg-cream-100 py-24 md:py-36">
+    <div class="container-x">
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {sights.map((s, i) => <SightCard sight={s} class:list={[i % 3 === 1 && 'lg:translate-y-12']} />)}
+      </div>
+    </div>
+  </section>
+
+  <!-- DISTANȚE -->
+  <section class="bg-cream-50 py-24 md:py-36">
+    <div class="container-x grid gap-16 lg:grid-cols-12">
+      <div class="lg:col-span-5">
+        <SectionHeading eyebrow="Distanțe" title='Cât de <em class="italic-serif">aproape</em>' text="Toate distanțele sunt măsurate de la ușa pensiunii, pe jos." size="md" />
+        <ul class="mt-12 border-t border-forest-900/10">
+          {
+            sights.map((s) => (
+              <li data-reveal>
+                <a href={url(`/locatii/${s.slug}`)} class="group grid grid-cols-[1fr_auto] items-baseline gap-x-6 gap-y-1 border-b border-forest-900/10 py-5">
+                  <span class="font-serif text-xl transition-colors group-hover:text-brass-600">{s.name}</span>
+                  <span class="font-serif text-2xl text-forest-800">{s.distance}</span>
+                  <span class="flex items-center gap-2 text-sm text-muted"><Footprints size={14} /> {s.walk}</span>
+                  <span class="flex items-center justify-end gap-2 text-sm text-muted"><Ticket size={14} /> {s.price} lei</span>
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+      <div class="lg:col-span-6 lg:col-start-7" data-reveal>
+        <MapEmbed class="h-full min-h-[520px]" />
+      </div>
+    </div>
+  </section>
+
+  <CTASection />
+</BaseLayout>

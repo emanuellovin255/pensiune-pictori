@@ -1,0 +1,49 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import Gallery, { type GalleryItem } from '../components/Gallery.astro';
+import CTASection from '../components/CTASection.astro';
+import { rooms } from '../data/rooms';
+import { sights } from '../data/sights';
+import { photos, photo } from '../lib/photos';
+import { galerie, em } from '../lib/continut';
+
+// Câte o categorie pentru fiecare cameră, plus obiectivele din apropiere.
+const cats = [
+  ...rooms.map((r) => ({ id: r.slug, label: r.short, items: photos(r.folder).map((src) => ({ src, alt: r.name, caption: undefined })) })),
+  { id: 'obiective', label: 'Obiective', items: sights.map((s) => ({ src: photo(s.photo), alt: s.name, caption: s.name })) },
+].filter((c) => c.items.length);
+
+// Amestecă determinist categoriile pentru „Toate”, ca galeria să nu înceapă cu 20 de poze din aceeași cameră.
+const buckets = cats.map((c) => c.items.map((it) => ({ ...it, cat: c.id }) as GalleryItem));
+const mixed: GalleryItem[] = [];
+while (buckets.some((b) => b.length)) {
+  for (const b of buckets) {
+    const next = b.shift();
+    if (next) mixed.push(next);
+  }
+}
+
+const de = (n: number) => (n % 100 === 0 || n % 100 >= 20 ? 'de ' : '');
+const filters = cats.map((c) => ({ id: c.id, label: c.label }));
+const p = galerie.pagina;
+---
+
+<BaseLayout title={p.titluSeo} description={p.descriereSeo} image={photo(p.poza)}>
+  <PageHero
+    eyebrow={p.eticheta}
+    crumb="Galerie"
+    title={em(p.titlu, 'text-brass-300')}
+    subtitle={`${mixed.length} ${de(mixed.length)}${p.subtitlu}`}
+    image={photo(p.poza)}
+    alt="Cameră la Pensiunea Pictorilor"
+  />
+
+  <section class="bg-cream-100 py-20 md:py-28">
+    <div class="container-x">
+      <Gallery items={mixed} filters={filters} />
+    </div>
+  </section>
+
+  <CTASection image={photo(p.pozaFinal)} />
+</BaseLayout>
